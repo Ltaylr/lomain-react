@@ -25,7 +25,7 @@ function Campaigns(){
                     throw new Error(`http error: ${response.status}`);
                 }
                 response.json().then(result => {
-                    var arr:Camp[] = JSON.parse(result);
+                    var arr:Camp[] = result;
                     setData(prevData => arr);
                 })
                 .then(res =>{

@@ -28,7 +28,7 @@ function Characters(){
                     throw new Error(`http error: ${response.status}`);
                 }
                 response.json().then(result => {
-                    var arr:Char[] = JSON.parse(result);
+                    var arr:Char[] = result;
                     setData(prevData => arr);
                 })
                 .then(res =>{
