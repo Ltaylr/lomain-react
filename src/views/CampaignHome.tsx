@@ -49,26 +49,16 @@ function CampaignHome(){
     
     return(
         <>
-         <h1 className=" 
-        font-extrabold text-cyan-400 
-        text-shadow text-shadow-fuchsia-500 
-        text-shadow-lg min-w-30 text-4xl md:text-5xl">{camp?.title}</h1>
-        <div className="flex flex-wrap gap-4 pt-10">
-              <div className="block 
-                min-w-80 max-w-[60%] p-3
-                border border-gray-200 
-                rounded-xl shadow-sm
-              dark:bg-bgray-800 dark:border-gray-700 dark:hover:bg-gray-900">
+        
                 <a href={"/campaign/" + camp?._id} className="block p-1 md:p-3 rounded-lg shadow-sm dark:bg-gray-800/30 dark:border-gray-700">
-                    <img className="rounded-lg mb-5 pt-3 pb-3  lg:w-[50%] md:w-[85%] mx-auto" src={baseUrl + '/images/' + camp?.imageUrl}alt=""/>
+                    <img className="rounded-lg mb-5 pt-3 pb-3  lg:w-[85%] md:w-[85%] mx-auto" src={baseUrl + '/images/' + camp?.imageUrl}alt=""/>
                     <p className=" bg-bgray-900 border-2 p-5 rounded-lg border-gray-500 text-xs md:text-lg text-center font-semibold text-cyan-400">
                         {camp?.description} 
                     </p>
                 </a>
                 <input type="hidden" value={camp?._id} name="campaignId"/>
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>"/>
-            </div>
-        </div>
+            
         </>
     );
   }
