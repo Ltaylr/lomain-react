@@ -62,33 +62,34 @@ function CampaignLayout(){
         <div>
             <div className="flex flex-wrap p-3
                 rounded-xl shadow-sm">
-                        <button onClick={() => {setChildComponent("home"); setLoading(true)}} className={"hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
+                        <button onClick={() => setChildComponent("home")} 
+                        className={" w-[10%] hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
                             <img className="mx-auto w-[30%] object-cover object-center rounded-lg" src={baseUrl + "/images/archive.svg"} alt="<%= campaign.title %>"/>
-                            <p className="text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium ">
+                            <p className={"text-lg text-center text-shadow-lg text-cyan-300 font-medium "  + ((comp==="home") ? "text-shadow-orange-500" : "text-shadow-fuchsia-500")} >
                                    Home
                             </p>
                         </button>
-                        <button onClick={() => {setChildComponent("gallery"); setLoading(true)}} className={"hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
+                        <button onClick={() => setChildComponent("gallery")} className={" w-[10%] hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
                             <img className="mx-auto w-[30%] object-cover object-center rounded-lg" src={baseUrl + "/images/archive.svg"} alt="<%= campaign.title %>"/>
-                                <p className="text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium ">
+                                <p className={"text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium " + ((comp==="gallery") ? "text-shadow-orange-500" : "text-shadow-fuchsia-500")}>
                                    Gallery
                                 </p>
                         </button>
-                        <button onClick={() => setChildComponent("journal")} className={"hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
+                        <button onClick={() => setChildComponent("journal")} className={" w-[10%] hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
                             <img className="mx-auto w-[30%] object-cover object-center rounded-lg" src={baseUrl + "/images/spellbook.svg"} alt="<%= campaign.title %>"/>
-                                <p className="text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium ">
+                                <p className={"text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium "+ ((comp==="journal") ? "text-shadow-orange-500" : "text-shadow-fuchsia-500")}>
                                    Journal
                                 </p>
                         </button>
-                        <button onClick={() => setChildComponent("locations")} className={"hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
+                        <button onClick={() => setChildComponent("locations")} className={" w-[10%] hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
                             <img className="mx-auto w-[30%] object-cover object-center rounded-lg" src={baseUrl + "/images/world.svg"} alt="<%= campaign.title %>"/>
-                                <p className="text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium ">
+                                <p className={"text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium "+ ((comp==="locations") ? "text-shadow-orange-500" : "text-shadow-fuchsia-500")}>
                                    Locations
                                 </p>
                         </button>
-                        <button onClick={() => setChildComponent("characters")} className={"hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
+                        <button onClick={() => setChildComponent("characters")} className={" w-[10%] hover:cursor-pointer max-w-full rounded-lg object-cover object-center"} >
                             <img className="mx-auto  w-[30%] object-cover object-center rounded-lg" src={baseUrl + "/images/armor.svg"} alt="<%= campaign.title %>"/>
-                                <p className="text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium ">
+                                <p className={"text-lg text-center text-shadow-lg text-cyan-300 text-shadow-fuchsia-500 font-medium " + ((comp==="characters") ? "text-shadow-orange-500" : "text-shadow-fuchsia-500")}>
                                    Characters
                                 </p>
                         </button>
@@ -103,7 +104,7 @@ function CampaignLayout(){
                         switch (comp) {
                           case "home" : return (<CampaignHome />);
                           case "gallery": return <Gallery title={camp?.title || ''}/>;
-                          case "journals":  return (<></>);
+                          case "journal":  return (<></>);
                           case "locations":  return (<></>);
                           case "characters":  return (<></>);
                           default:      return (<CampaignHome />);
